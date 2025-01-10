@@ -95,6 +95,49 @@ section{
     }
 }
 
+.gallery{
+    .gallery-content{
+        width: 100%;
+        display: grid;
+        grid-template-rows: repeat(3, 250px);
+        // grid-template-columns: 319px 271px 271px 282px;
+        grid-template-areas: 
+            "gallerytitle gallerytitle gallerytitle gallerytitle"
+            "gallerybig gallerybig gallerybig gallerybig"
+            "gallerytext gallerytext gallerytext gallerytext";
+
+        @include breakpoint-tablet {
+            grid-template-areas: 
+            ". gallerybig gallerybig ."
+            "gallerytitle gallerybig gallerybig gallerytext"
+            ". gallerybig gallerybig gallerysmall";
+            gap: 40px;
+        }
+    }
+
+    .galery-title{
+        background-color: red;
+        grid-area: gallerytitle;
+    }
+    .gallery-image-big{
+        background-color: yellow;
+        grid-area: gallerybig;
+    }
+    .gallery-text{
+        background-color: rgb(0, 255, 34);
+        grid-area: gallerytext;
+    }
+    .gallery-image-small{
+        background-color: rgb(0, 60, 255);
+        grid-area: gallerysmall;
+        height: 193px;
+        display: none;
+        @include breakpoint-tablet {
+            display: block;
+        }
+    }
+}
+
 .header-image{
     position: relative;
     width: 100%;
