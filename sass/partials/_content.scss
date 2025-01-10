@@ -25,8 +25,8 @@ section{
         background-color: $color-brown;
         transform: rotate(330deg);
         @include breakpoint-tablet {
-            bottom: -210px;
-            right: 30px;
+            bottom: -195px;
+            right: 35px;
         }
     }
     .hero-image{
@@ -80,6 +80,7 @@ section{
                     margin-left: 18px;
                     transition: all 0.4s ease-in-out;
                     @include breakpoint-tablet {
+                        top: 4px;
                         width: 46px;
                     }
                 }
