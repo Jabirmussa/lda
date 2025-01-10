@@ -17,18 +17,18 @@ section{
         content: '';
         position: absolute;
         z-index: 2;
-        bottom: -162px;
+        bottom: -210px;
         right: 0;
-        width: 20vw;
+        width: 40vw;
         min-width: 123px;
-        height: 200px;
+        height: 250px;
         background-color: $color-brown;
         transform: rotate(330deg);
         @include breakpoint-tablet {
-            right: 50px;
+            right: 30px;
         }
         @include breakpoint-desktop-medium {
-            bottom: -120px;
+            // bottom: -120px;
         }
     }
     .hero-image{
@@ -57,7 +57,7 @@ section{
         .hero-content{
             margin-top: auto;
             max-width: 33ch;
-            margin-bottom: 38px;
+            margin-bottom: 30px;
             @include breakpoint-tablet {
                 max-width: 56ch;
                 margin-bottom: 90px;
