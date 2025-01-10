@@ -17,14 +17,15 @@ section{
         content: '';
         position: absolute;
         z-index: 2;
-        bottom: -210px;
-        right: 0;
+        bottom: -217px;
+        right: -10px;
         width: 40vw;
         min-width: 123px;
         height: 250px;
         background-color: $color-brown;
         transform: rotate(330deg);
         @include breakpoint-tablet {
+            bottom: -210px;
             right: 30px;
         }
     }
