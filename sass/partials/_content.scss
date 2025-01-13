@@ -98,7 +98,6 @@ section{
 .gallery{
     .wrapper{
         @include breakpoint-tablet {
-            
             max-width: 1245px;
         }
     }
@@ -117,7 +116,6 @@ section{
             ". gallerybig gallerybig ."
             "gallerytitle gallerybig gallerybig gallerytext"
             ". gallerybig gallerybig gallerysmall";
-            // gap: 30px 60px;
         }
     }
     
@@ -135,6 +133,7 @@ section{
         align-self: end;
     }
     .gallery-image-big{
+        position: relative;
         grid-area: gallerybig;
         max-height: 732px;
         min-height: 440px;
@@ -146,6 +145,28 @@ section{
             width:40vw;
             max-width: 542px;
             aspect-ratio: 1 / 1.35;
+        }
+        .shape-top{
+            position: absolute;
+            top: 0;
+            left: 15px;
+            z-index: 2;
+            width: 96px;
+            @include breakpoint-tablet {
+                left: 20px;
+                width: 167px;
+            }
+        }
+        .shape-bottom{
+            position: absolute;
+            bottom: -1px;
+            right: 15px;
+            z-index: 2;
+            width: 96px;
+            @include breakpoint-tablet {
+                right: 20px;
+                width: 167px;
+            }
         }
     }
     .gallery-text{
