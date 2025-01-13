@@ -97,23 +97,27 @@ section{
 
 .gallery{
     .wrapper{
-        max-width: 1234px;
+        @include breakpoint-tablet {
+            
+            max-width: 1245px;
+        }
     }
     .gallery-content{
         width: 100%;
         display: grid;
-        grid-template-rows: repeat(3, 300px);
         grid-template-areas: 
         "gallerytitle gallerytitle gallerytitle gallerytitle"
         "gallerybig gallerybig gallerybig gallerybig"
         "gallerytext gallerytext gallerytext gallerytext";
+        gap: 40px;
         
-        @include breakpoint-tablet {
+        @include breakpoint-desktop-small {
+            grid-template-rows: repeat(3, 300px);
             grid-template-areas: 
             ". gallerybig gallerybig ."
             "gallerytitle gallerybig gallerybig gallerytext"
             ". gallerybig gallerybig gallerysmall";
-            gap: 30px 80px;
+            // gap: 30px 60px;
         }
     }
     
@@ -121,6 +125,12 @@ section{
         grid-area: gallerytitle;
         h1{
             margin-bottom: 0;
+            font-size: 46px;
+            line-height: 46px;
+            @include breakpoint-tablet {
+                font-size: 60px;
+                line-height: 60px;
+            }
         }
         align-self: end;
     }
@@ -128,12 +138,17 @@ section{
         grid-area: gallerybig;
         max-height: 732px;
         min-height: 440px;
-        @include breakpoint-tablet {
-            width: 542px;
+        margin-left: 35px;
+        width: 90%;
+        @include breakpoint-desktop-small {
+            margin-right: 40px;
+            margin-left: 0;
+            width:40vw;
+            max-width: 542px;
+            aspect-ratio: 1 / 1.35;
         }
     }
     .gallery-text{
-        margin-top: 45px;
         grid-area: gallerytext;
         p{
             margin-bottom: 12px;
@@ -141,12 +156,18 @@ section{
         .btn{
             background-color: #CDB568;
         }
+        margin-left: 35px;
+        @include breakpoint-desktop-small {
+            margin-left: 0;
+            margin-top: 45px;
+            
+        }
     }
     .gallery-image-small{
         grid-area: gallerysmall;
         height: 193px;
         display: none;
-        @include breakpoint-tablet {
+        @include breakpoint-desktop-small{
             display: block;
         }
     }
