@@ -13,21 +13,16 @@ section{
     @include breakpoint-desktop-small{
         height: 97dvh;
     }
-    &::before{
-        content: '';
+    .shape-bottom{
         position: absolute;
-        z-index: 2;
-        bottom: -217px;
-        right: -10px;
+        z-index: 1;
+        bottom: -1px;
+        right: 35px;
         width: 40vw;
         min-width: 123px;
         max-width: 544px;
-        height: 250px;
-        background-color: $color-brown;
-        transform: rotate(330deg);
         @include breakpoint-tablet {
-            bottom: -195px;
-            right: 35px;
+            right: 40px;
         }
     }
     .hero-image{
@@ -171,11 +166,15 @@ section{
     }
     .gallery-text{
         grid-area: gallerytext;
+        width: 28ch;
         p{
             margin-bottom: 12px;
         }
         .btn{
             background-color: #CDB568;
+            font-family: light;
+            color: $color-black;
+            font-size: 16px;
         }
         margin-left: 35px;
         @include breakpoint-desktop-small {
