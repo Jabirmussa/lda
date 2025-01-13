@@ -91,6 +91,7 @@ section{
 }
 
 .gallery{
+    padding-bottom: 0;
     .wrapper{
         @include breakpoint-tablet {
             max-width: 1245px;
@@ -167,8 +168,9 @@ section{
     .gallery-text{
         grid-area: gallerytext;
         width: 28ch;
+        align-self: end;
         p{
-            margin-bottom: 12px;
+            margin-bottom: 13px;
         }
         .btn{
             background-color: #CDB568;
@@ -179,7 +181,7 @@ section{
         margin-left: 35px;
         @include breakpoint-desktop-small {
             margin-left: 0;
-            margin-top: 45px;
+            margin-bottom: 27px;
             
         }
     }
