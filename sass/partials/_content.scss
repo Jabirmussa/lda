@@ -17,10 +17,9 @@ section{
         position: absolute;
         z-index: 1;
         bottom: -1px;
-        right: 35px;
-        width: 40vw;
-        min-width: 123px;
-        max-width: 544px;
+        right: 25px;
+        width: 30vw;
+        max-width: 414px;
         @include breakpoint-tablet {
             right: 40px;
         }
@@ -93,6 +92,7 @@ section{
 .gallery{
     padding-bottom: 0;
     .wrapper{
+        width: calc(100% - 5rem);
         @include breakpoint-tablet {
             max-width: 1245px;
         }
@@ -104,7 +104,7 @@ section{
         "gallerytitle gallerytitle gallerytitle gallerytitle"
         "gallerybig gallerybig gallerybig gallerybig"
         "gallerytext gallerytext gallerytext gallerytext";
-        gap: 40px;
+        gap: 35px;
         
         @include breakpoint-desktop-small {
             grid-template-rows: repeat(3, 300px);
@@ -118,10 +118,10 @@ section{
     .galery-title{
         grid-area: gallerytitle;
         h1{
-            margin-bottom: 32px;
             font-size: 46px;
             line-height: 46px;
             @include breakpoint-tablet {
+                margin-bottom: 32px;
                 font-size: 60px;
                 line-height: 60px;
             }
@@ -175,8 +175,13 @@ section{
         .btn{
             background-color: #CDB568;
             font-family: light;
+            border: 1px solid #CDB568;
             color: $color-black;
             font-size: 16px;
+            &:hover{
+                background-color: transparent;
+                border: 1px solid #CDB568;
+            }
         }
         margin-left: 35px;
         @include breakpoint-desktop-small {
