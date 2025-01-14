@@ -244,16 +244,44 @@ section{
     width: 100%;
     height: 100%;
 }
-
 .overview{
-    .wrapper{
-        @include grid-layout(1);
-        @include breakpoint-tablet{
-            @include grid-layout(2);
+    position: relative;
+    background-color: $color-black;
+    .overview-title{
+        h1{
+            color: $color-brown;
+            font-size: 100px;
+            line-height: 50px;
+            text-align: center;
         }
-        @include breakpoint-desktop-small{
-            @include grid-layout(3);
+    }
+    .shape-top{
+        position: absolute;
+        top: 0;
+        left: 20px;
+        z-index: 2;
+        width: 140px;
+        @include breakpoint-tablet {
+            left: 138px;
+            width: 262px;
         }
+    }
+    .shape-bottom{
+        position: absolute;
+        bottom: -1px;
+        right: 20px;
+        z-index: 2;
+        width: 140px;
+        @include breakpoint-tablet {
+            right: 138px;
+            width: 262px;
+        }
+    }
+}
+.overview-items{
+    @include grid-layout(12);
+    @include breakpoint-desktop-small{
+        @include grid-layout(20);
     }
 }
 
@@ -261,15 +289,52 @@ section{
     position: relative;
     display: block;
     text-decoration: none;
-    min-height: rem(430px);
-    padding: rem(30px);
+    min-height: rem(482px);
+    padding: rem(20px) rem(30px);
     display: flex;
     align-items: flex-end;
     background: $color-black;
     overflow: hidden;
+    @include grid-column-span(5);
+    &:first-child{
+        @include grid-column-start(3);
+    }
+    &:nth-child(3n + 2){
+        @include grid-column-start(9);
+        background-color: #BA5D01;
+    }
+    &:nth-child(3n + 3){
+        @include grid-column-start(15)
+    }
     &:hover{
         .overview-item-image{
             transform: scale(1.05);
+        }
+    }
+
+    .btn{
+        font-size: 16px;
+        font-size: 20px;
+        background-color: transparent;
+        padding: 0 20px 0 0;
+
+        position: relative;
+        .arrow-right{
+            position: relative;
+            top: 1px;
+            width: 35px;
+            right: 0;
+            margin-left: 18px;
+            transition: all 0.4s ease-in-out;
+            @include breakpoint-tablet {
+                top: 4px;
+                width: 46px;
+            }
+        }
+        &:hover{
+            .arrow-right{
+                right: -20px;
+            }
         }
     }
 }
