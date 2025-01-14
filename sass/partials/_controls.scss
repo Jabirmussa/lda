@@ -28,6 +28,19 @@
     }
 }
 
+.btn-brown{
+    background-color: #CDB568;
+    font-family: light;
+    border: 1px solid #CDB568;
+    color: $color-black;
+    font-size: 16px;
+    &:hover{
+        background-color: transparent;
+        border: 1px solid #CDB568;
+    }
+    
+}
+
 form{
     position: relative;
     max-width: rem(700px);
