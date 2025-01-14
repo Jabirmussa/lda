@@ -90,7 +90,10 @@ section{
 }
 
 .gallery{
-    padding-bottom: 0;
+    @include breakpoint-tablet {
+        padding-bottom: 0;
+        
+    }
     .wrapper{
         width: calc(100% - 5rem);
         @include breakpoint-tablet {
@@ -173,15 +176,7 @@ section{
             margin-bottom: 13px;
         }
         .btn{
-            background-color: #CDB568;
-            font-family: light;
-            border: 1px solid #CDB568;
-            color: $color-black;
-            font-size: 16px;
-            &:hover{
-                background-color: transparent;
-                border: 1px solid #CDB568;
-            }
+            color: #000;
         }
         margin-left: 35px;
         @include breakpoint-desktop-small {
@@ -330,23 +325,23 @@ section{
         .shape-top{
             position: absolute;
             top: 0;
-            left: 15px;
+            left: 20px;
             z-index: 2;
-            width: 96px;
+            width: 140px;
             @include breakpoint-tablet {
                 left: 138px;
-                width: 167px;
+                width: 262px;
             }
         }
         .shape-bottom{
             position: absolute;
             bottom: -1px;
-            right: 15px;
+            right: 20px;
             z-index: 2;
-            width: 96px;
+            width: 140px;
             @include breakpoint-tablet {
                 right: 138px;
-                width: 167px;
+                width: 262px;
             }
         }
         .wrapper{
