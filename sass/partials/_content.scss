@@ -386,6 +386,10 @@ section{
             @include grid-column-start(1);
 
             @include breakpoint-tablet {
+                @include grid-column-span(7);
+                @include grid-column-start(1);
+            }
+            @include breakpoint-desktop-small {
                 @include grid-column-span(6);
                 @include grid-column-start(3);
             }
