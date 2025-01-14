@@ -90,59 +90,59 @@ section{
 }
 
 .gallery{
-    @include breakpoint-tablet {
-        padding-bottom: 0;
-        
-    }
-    .wrapper{
-        width: calc(100% - 5rem);
-        @include breakpoint-tablet {
-            max-width: 1245px;
-        }
+    margin-bottom: 145px;
+    @include breakpoint-desktop-small {
+        margin-bottom: 245px;
     }
     .gallery-content{
         width: 100%;
         display: grid;
-        grid-template-areas: 
-        "gallerytitle gallerytitle gallerytitle gallerytitle"
-        "gallerybig gallerybig gallerybig gallerybig"
-        "gallerytext gallerytext gallerytext gallerytext";
-        gap: 35px;
-        
+        @include grid-layout(12);
+        gap: 40px 10px;
         @include breakpoint-desktop-small {
-            grid-template-rows: repeat(3, 300px);
-            grid-template-areas: 
-            ". gallerybig gallerybig ."
-            "gallerytitle gallerybig gallerybig gallerytext"
-            ". gallerybig gallerybig gallerysmall";
+            @include grid-layout(20);
+            gap: 10px 10px;
         }
     }
-    
+   
     .galery-title{
-        grid-area: gallerytitle;
+        @include grid-column-span(9);
+        @include grid-column-start(2);
+        @include breakpoint-desktop-small {
+            @include grid-column-span(5);
+            @include grid-column-start(2);
+        }
+        align-self: end;
+        max-width: 36ch;
         h1{
             font-size: 46px;
             line-height: 46px;
             @include breakpoint-tablet {
-                margin-bottom: 32px;
                 font-size: 60px;
                 line-height: 60px;
             }
+            margin-bottom: 0;
+            @include breakpoint-desktop-small {
+                margin-bottom: 130px;
+            }
         }
-        align-self: end;
     }
     .gallery-image-big{
+        @include grid-column-span(9);
+        @include grid-column-start(3);
+        @include breakpoint-desktop-small {
+            @include grid-column-span(6);
+            @include grid-column-start(7);
+        }
+        @include breakpoint-desktop-medium {
+            @include grid-column-span(8);
+            @include grid-column-start(7);
+        }
         position: relative;
-        grid-area: gallerybig;
         max-height: 732px;
         min-height: 440px;
-        margin-left: 35px;
-        width: 90%;
         @include breakpoint-desktop-small {
-            margin-right: 40px;
             margin-left: 0;
-            width:40vw;
-            max-width: 542px;
             aspect-ratio: 1 / 1.35;
         }
         .shape-top{
@@ -168,54 +168,63 @@ section{
             }
         }
     }
-    .gallery-text{
-        grid-area: gallerytext;
-        width: 28ch;
-        align-self: end;
-        p{
-            margin-bottom: 13px;
-        }
-        .btn{
-            color: #000;
-        }
-        margin-left: 35px;
+
+    .text-image{
+        @include grid-column-span(8);
+        @include grid-column-start(3);
         @include breakpoint-desktop-small {
-            margin-left: 0;
-            margin-bottom: 27px;
-            
+            @include grid-column-span(6);
+            @include grid-column-start(14);
+            margin-bottom: -150px;
         }
-    }
-    .gallery-image-small{
-        grid-area: gallerysmall;
-        height: 193px;
-        display: none;
-        @include breakpoint-desktop-small{
-            display: block;
+        @include breakpoint-desktop-medium {
+            @include grid-column-span(4);
+            @include grid-column-start(16);
+            align-self: end;
         }
-        .shape-top{
-            position: absolute;
-            top: 0;
-            left: 15px;
-            z-index: 2;
-            width: 96px;
-            @include breakpoint-tablet {
-                left: 20px;
-                width: 118px;
+        .gallery-text{
+            max-width: 28ch;
+            p{
+                margin-bottom: 13px;
+            }
+            .btn{
+                color: #000;
+            }
+            @include breakpoint-desktop-small {
+                margin-bottom: 65px;
             }
         }
-        .shape-bottom{
-            position: absolute;
-            bottom: -1px;
-            right: 15px;
-            z-index: 2;
-            width: 96px;
-            @include breakpoint-tablet {
-                right: 20px;
-                width: 118px;
+        .gallery-image-small{
+            height: 193px;
+            display: none;
+            @include breakpoint-desktop-small{
+                display: block;
+            }
+            .shape-top{
+                position: absolute;
+                top: 0;
+                left: 15px;
+                z-index: 2;
+                width: 96px;
+                @include breakpoint-tablet {
+                    left: 20px;
+                    width: 118px;
+                }
+            }
+            .shape-bottom{
+                position: absolute;
+                bottom: -1px;
+                right: 15px;
+                z-index: 2;
+                width: 96px;
+                @include breakpoint-tablet {
+                    right: 20px;
+                    width: 118px;
+                }
             }
         }
     }
-}
+    }
 
 .header-image{
     position: relative;
