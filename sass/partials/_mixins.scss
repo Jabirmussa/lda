@@ -1,4 +1,4 @@
-@mixin grid-layout($column-count, $column-gap: 2rem, $row-gap: null) {
+@mixin grid-layout($column-count, $column-gap: 10px, $row-gap: null) {
     $row-gap: if($row-gap == null, $column-gap, $row-gap);
     display: grid;
     grid-template-columns: repeat($column-count, 1fr);
