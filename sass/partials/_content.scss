@@ -97,8 +97,11 @@ section{
     .gallery-content{
         width: 100%;
         @include breakpoint-tablet {
-            max-width: rem(1250px);
             margin: 0 auto;
+            max-width: rem(850px);
+        }
+        @include breakpoint-desktop-medium {
+            max-width: rem(1250px);
         }
         display: grid;
         @include grid-layout(12);
