@@ -112,12 +112,7 @@ em {
             @include grid-column-start(1)
         }
         a{
-            &:not(.btn){
-                &:hover{
-                    color: $color-black;
-                }    
-            }
-            
+            color: $color-black;
         }
     }
 
