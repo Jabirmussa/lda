@@ -21,8 +21,13 @@ h1{
 }
 
 h2{
-    font-size: rem(32px);
-    margin-bottom: rem(10px);
+    font-size: rem(36px);
+    margin-bottom: rem(30px);
+    @include breakpoint-tablet {
+        font-size: rem(60px);
+        line-height: 60px;
+        margin-bottom: 50px;
+    }
 }
 
 h3{
@@ -42,17 +47,29 @@ em {
 }
 
 .text-container {
-    max-width: rem(700px);
+    @include breakpoint-tablet {
+        @include grid-layout(16);
+    }
+    h2{
+        @include grid-column-span(11);
+    }
+    // max-width: rem(700px);
     p, ul, ol,
     blockquote,
     .embed-container,
     .wp-caption {
         line-height: rem(24px);
-        margin-bottom: rem(24px);
+        margin-bottom: rem(25px);
         max-width: 100%;
 
         &:last-child {
             margin-bottom: 0;
+        }
+        @include breakpoint-tablet {
+            @include grid-column-span(12);
+        }
+        @include breakpoint-desktop-medium {
+            @include grid-column-span(9);
         }
     }
 
@@ -89,14 +106,19 @@ em {
             }
         }
     }
-
-    a{
-        &:not(.btn){
-            &:hover{
-                color: $color-black;
-            }    
+    .button-container{
+        @include breakpoint-tablet {
+            @include grid-column-span(4);
+            @include grid-column-start(1)
         }
-        
+        a{
+            &:not(.btn){
+                &:hover{
+                    color: $color-black;
+                }    
+            }
+            
+        }
     }
 
     blockquote {
@@ -104,5 +126,32 @@ em {
         font-size: 1.4em;
         line-height: 1.2;
         border-left: .1rem solid currentColor;
+    }
+
+    img{
+        position: relative;
+        margin: 30px 0;
+        width: 100%;
+        object-fit: cover;
+        @include breakpoint-tablet {
+            @include grid-column-start(3);
+            @include grid-column-span(13);
+            height: 350px;
+            margin: 40px 0 60px 0;
+        }
+        @include breakpoint-desktop-small {
+            @include grid-column-start(4);
+            height: 558px;
+        }
+
+        &::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            z-index: 2;
+            left: 0;
+            background-image: url(/images/shape.svg);
+            background-repeat: no-repeat;
+        }
     }
 }
