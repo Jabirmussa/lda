@@ -49,6 +49,7 @@ em {
 .text-container {
     @include breakpoint-tablet {
         @include grid-layout(16);
+        gap: 0 10px;
     }
     h1,h2, h3, h4, h5, h6{
         @include grid-column-span(11);
