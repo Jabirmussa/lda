@@ -482,7 +482,9 @@ section{
             @include grid-column-span(10);
             @include grid-column-start(2);
             height: 204px;
+            width: 310px;
             @include breakpoint-tablet {
+                margin-top: 130px;
                 @include grid-column-span(4);
                 @include grid-column-start(9);
             }
