@@ -95,9 +95,11 @@ section{
         margin-bottom: 245px;
     }
     .gallery-content{
-        width: calc(100% - 4rem);
-        max-width: rem(1250px);
-        margin: 0 auto;
+        width: 100%;
+        @include breakpoint-tablet {
+            max-width: rem(1250px);
+            margin: 0 auto;
+        }
         display: grid;
         @include grid-layout(12);
         gap: 40px 10px;
@@ -108,8 +110,8 @@ section{
     }
    
     .galery-title{
-        @include grid-column-span(9);
-        @include grid-column-start(1);
+        @include grid-column-span(12);
+        @include grid-column-start(2);
         @include breakpoint-desktop-small {
             @include grid-column-span(5);
             @include grid-column-start(1);
@@ -131,7 +133,7 @@ section{
     }
     .gallery-image-big{
         @include grid-column-span(9);
-        @include grid-column-start(2);
+        @include grid-column-start(3);
         @include breakpoint-desktop-small {
             @include grid-column-span(7);
             @include grid-column-start(6);
@@ -172,8 +174,8 @@ section{
     }
 
     .gallery-text-image{
-        @include grid-column-span(5);
-        @include grid-column-start(2);
+        @include grid-column-span(9);
+        @include grid-column-start(3);
         @include breakpoint-desktop-small {
             @include grid-column-span(5);
             @include grid-column-start(14);
@@ -299,15 +301,18 @@ section{
     background: $color-black;
     overflow: hidden;
     @include grid-column-span(5);
-    &:first-child{
-        @include grid-column-start(3);
-    }
-    &:nth-child(3n + 2){
-        @include grid-column-start(9);
-        background-color: #BA5D01;
-    }
-    &:nth-child(3n + 3){
-        @include grid-column-start(15)
+    @include grid-column-start(5);
+    @include breakpoint-tablet {
+        
+        &:first-child{
+            @include grid-column-start(3);
+        }
+        &:nth-child(3n + 2){
+            @include grid-column-start(9);
+        }
+        &:nth-child(3n + 3){
+            @include grid-column-start(15)
+        }
     }
     &:hover{
         .overview-item-image{

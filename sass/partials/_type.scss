@@ -50,10 +50,9 @@ em {
     @include breakpoint-tablet {
         @include grid-layout(16);
     }
-    h2{
+    h1,h2, h3, h4, h5, h6{
         @include grid-column-span(11);
     }
-    // max-width: rem(700px);
     p, ul, ol,
     blockquote,
     .embed-container,
@@ -122,31 +121,55 @@ em {
         line-height: 1.2;
         border-left: .1rem solid currentColor;
     }
-
-    img{
+    p:has(img){
         position: relative;
-        margin: 30px 0;
-        width: 100%;
-        object-fit: cover;
         @include breakpoint-tablet {
             @include grid-column-start(3);
             @include grid-column-span(13);
-            height: 350px;
-            margin: 40px 0 60px 0;
         }
         @include breakpoint-desktop-small {
             @include grid-column-start(4);
-            height: 558px;
         }
-
+        margin: 0;
         &::before{
-            content: '';
+            content: "";
             position: absolute;
-            top: 0;
+            pointer-events: none;
             z-index: 2;
-            left: 0;
+            top: 0;
+            left: 30px;
+            width: 167px;
             background-image: url(/images/shape.svg);
-            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-position: center center;
+            aspect-ratio: 1 / 0.9;
+        }
+        &::after{
+            content: "";
+            position: absolute;
+            pointer-events: none;
+            z-index: 2;
+            bottom: 27px;
+            right: 30px;
+            width: 167px;
+            background-image: url(/images/shape-bottom.svg);
+            background-size: 100% 100%;
+            background-position: center center;
+            aspect-ratio: 1 / 0.9;
+        }
+        >img{
+            position: relative;
+            margin: 30px 0;
+            width: 100%;
+            object-fit: cover;
+            height: 350px;
+            margin: 40px 0 60px 0;
+            @include breakpoint-tablet {
+                height: 500px;
+            }
+            @include breakpoint-desktop-small {
+                height: 558px;
+            }
         }
     }
 }
