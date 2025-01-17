@@ -11,7 +11,7 @@ section{
     margin: 10px 10px 0 10px;
     overflow: hidden;
     @include breakpoint-desktop-small{
-        height: 97dvh;
+        height: calc(100vh - 20px);
     }
     .shape-bottom{
         position: absolute;
@@ -456,37 +456,43 @@ section{
 
 .text-image{
     .wrapper{
-        @include grid-layout(12);
+        @include grid-layout(10);
+        @include breakpoint-tablet {
+            @include grid-layout(16);
+        }
         .text{
-            @include grid-column-span(11);
-            @include grid-column-start(1);
+            @include grid-column-span(9);
 
             @include breakpoint-tablet {
-                @include grid-column-span(7);
+                @include grid-column-span(10);
                 @include grid-column-start(1);
             }
             @include breakpoint-desktop-small {
-                @include grid-column-span(6);
+                @include grid-column-span(8);
                 @include grid-column-start(3);
             }
             h1{
                 font-size: 46px;
                 line-height: 1;
                 @include breakpoint-tablet {
-                    font-size: 70px;
+                    font-size: 50px;
+                }
+                @include breakpoint-desktop-small {
                     line-height: 80px;
+                    font-size: 70px;
                 }
             }
         }
         .image{
-            @include grid-column-span(10);
+            @include grid-column-span(9);
             @include grid-column-start(2);
             height: 204px;
-            width: 310px;
             @include breakpoint-tablet {
+                width: 310px;
                 margin-top: 130px;
                 @include grid-column-span(4);
-                @include grid-column-start(9);
+                @include grid-column-start(11);
+                margin-left: 26px;
             }
             .shape-top{
                 position: absolute;
