@@ -257,12 +257,17 @@ section{
     background-color: $color-black;
     .overview-title{
         h1{
+            @include breakpoint-desktop-small{
+                @include grid-column-start(8);
+                @include grid-column-span(5);
+            }
             color: $color-brown;
-            font-size: 100px;
+            font-size: clamp(3.125rem, 1.7253rem + 5.2083vw, 6.25rem);
             line-height: 50px;
-            text-align: center;
+            margin-bottom: 60px;
         }
     }
+  
     .shape-top{
         position: absolute;
         top: 0;
@@ -285,36 +290,53 @@ section{
             width: 262px;
         }
     }
-}
-.overview-items{
-    @include grid-layout(12);
-    @include breakpoint-desktop-small{
-        @include grid-layout(20);
+    .wrapper{
+        max-width: rem(1250px);
+        .overview-items, .overview-title{
+            @include grid-layout(10, 30px);
+            @include breakpoint-desktop-small{
+                @include grid-layout(18);
+            }
+        }
+        .overview-btn{
+            @include grid-column-start(1);
+            @include grid-column-span(6);
+            @include breakpoint-desktop-small {
+                margin-top: -60px;
+                @include grid-column-start(14);
+            }
+        }
     }
 }
 
 .overview-item{
     position: relative;
     display: block;
+    cursor: pointer;
     text-decoration: none;
-    min-height: rem(482px);
+    height: rem(482px);
     padding: rem(20px) rem(30px);
     display: flex;
     align-items: flex-end;
     background: $color-black;
     overflow: hidden;
-    @include grid-column-span(5);
-    @include grid-column-start(5);
+    @include grid-column-span(10);
+    justify-content: space-between;
     @include breakpoint-tablet {
-        
-        &:first-child{
-            @include grid-column-start(3);
+        @include grid-column-span(5);
+    }
+    @include breakpoint-desktop-small {
+        @include grid-column-span(5);
+        &:nth-child(3n + 1){
+            @include grid-column-start(2);
+            margin-top: -70px;
         }
         &:nth-child(3n + 2){
-            @include grid-column-start(9);
+            margin-top: 120px;
+            @include grid-column-start(8);
         }
         &:nth-child(3n + 3){
-            @include grid-column-start(15)
+            @include grid-column-start(14);
         }
     }
     &:hover{
@@ -344,9 +366,23 @@ section{
         }
         &:hover{
             .arrow-right{
-                right: -20px;
+                right: -10px;
             }
         }
+    }
+    .shape-bottom, .shape-top{
+        position: absolute;
+        width: 160px;
+        path{
+            fill:#000;
+        }
+    }
+    .shape-bottom{
+        bottom: 0;
+        right: 20px;
+    }
+    .shape-top{
+        left: 20px;
     }
 }
 
