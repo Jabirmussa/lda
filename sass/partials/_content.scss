@@ -373,7 +373,11 @@ section{
     }
     .shape-bottom, .shape-top{
         position: absolute;
-        width: 160px;
+        @include breakpoint-tablet {
+            width: 10vw;
+            max-width: 160px;
+            
+        }
         path{
             fill:#000;
         }
