@@ -300,9 +300,10 @@ section{
         }
         .overview-btn{
             @include grid-column-start(1);
-            @include grid-column-span(6);
+            @include grid-column-span(8);
             @include breakpoint-desktop-small {
                 margin-top: -60px;
+                @include grid-column-span(5);
                 @include grid-column-start(14);
             }
         }
