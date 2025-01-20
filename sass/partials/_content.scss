@@ -566,14 +566,23 @@ section{
 
 .cta{
     .wrapper{
+        max-width: rem(1250px);
         @include breakpoint-tablet {
-            @include grid-layout(14);
+            @include grid-layout(15);
+            max-width: 1290px;
         }
         .cta-content{
-            @include grid-column-span(4);
             align-self: center;
             max-width: 30ch;
             margin-bottom: 50px;
+            @include breakpoint-tablet {
+                @include grid-column-span(5);
+                @include grid-column-start(1);
+            }
+            @include breakpoint-desktop-small {
+                @include grid-column-span(4);
+                @include grid-column-start(3);
+            }
             h1{
                 font-size: 60px;
                 line-height: 60px;
@@ -583,12 +592,16 @@ section{
             }
         }
         .big-image{
-            @include grid-column-span(5);
-            @include grid-column-start(6);
             height: 324px;
             @include breakpoint-tablet {
+                @include grid-column-start(6);
+                @include grid-column-span(5);
                 height: 526px;
             }
+            @include breakpoint-desktop-small {
+                @include grid-column-span(4);
+                @include grid-column-start(7);
+            }   
         }
         .shape-top{
             position: absolute;
