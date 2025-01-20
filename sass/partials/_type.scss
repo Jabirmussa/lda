@@ -10,11 +10,10 @@ h2, h3, h4{
 }
 
 h1{
-    font-size: 36px;
+    font-size: clamp(2.25rem, 1.5781rem + 2.5vw, 3.75rem);
     line-height: 36px;
     margin-bottom: rem(20px);
     @include breakpoint-tablet {
-        font-size: rem(60px);
         line-height: rem(60px);
         margin-bottom: rem(36px);
     }
@@ -109,7 +108,8 @@ em {
     .button-container{
         @include breakpoint-tablet {
             @include grid-column-span(4);
-            @include grid-column-start(1)
+            @include grid-column-start(1);
+            align-self: end;
         }
         a{
             color: $color-black;
