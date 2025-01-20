@@ -46,12 +46,15 @@ section{
     .wrapper{
         z-index: 2;
         height: 100%;
-        display: flex;
         .hero-content{
+            @include grid-column-span(11);
+            @include grid-column-start(2);
             margin-top: auto;
             max-width: 33ch;
             margin-bottom: 30px;
             @include breakpoint-tablet {
+                @include grid-column-start(3);
+
                 max-width: 56ch;
                 margin-bottom: 90px;
             }
@@ -94,33 +97,32 @@ section{
     @include breakpoint-desktop-small {
         margin-bottom: 245px;
     }
-    .gallery-content{
-        width: 100%;
-        @include breakpoint-tablet {
-            margin: 0 auto;
-            max-width: rem(850px);
-        }
-        @include breakpoint-desktop-medium {
-            max-width: rem(1250px);
-        }
-        display: grid;
-        @include grid-layout(12);
-        gap: 40px 10px;
-        @include breakpoint-desktop-small {
-            @include grid-layout(18);
-            gap: 10px 10px;
-        }
-    }
+    // .gallery-content{
+    //     width: 100%;
+    //     @include breakpoint-tablet {
+    //         margin: 0 auto;
+    //         max-width: rem(850px);
+    //     }
+    //     @include breakpoint-desktop-medium {
+    //         max-width: rem(1250px);
+    //     }
+    //     display: grid;
+    //     @include grid-layout(12);
+    //     gap: 40px 10px;
+    //     @include breakpoint-desktop-small {
+    //         @include grid-layout(18);
+    //         gap: 10px 10px;
+    //     }
+    // }
    
     .galery-title{
         @include grid-column-span(12);
         @include grid-column-start(2);
         @include breakpoint-desktop-small {
             @include grid-column-span(5);
-            @include grid-column-start(1);
+            @include grid-column-start(2);
         }
         align-self: end;
-        max-width: 36ch;
         h1{
             font-size: 46px;
             line-height: 46px;
@@ -135,15 +137,18 @@ section{
         }
     }
     .gallery-image-big{
-        @include grid-column-span(9);
+        @include grid-column-span(10);
         @include grid-column-start(3);
+        @include breakpoint-tablet {
+            @include grid-column-span(17);
+        }
         @include breakpoint-desktop-small {
             @include grid-column-span(7);
-            @include grid-column-start(6);
+            @include grid-column-start(7);
         }
         @include breakpoint-desktop-medium {
             @include grid-column-span(8);
-            @include grid-column-start(6);
+            @include grid-column-start(7);
         }
         position: relative;
         max-height: 732px;
@@ -181,12 +186,12 @@ section{
         @include grid-column-start(3);
         @include breakpoint-desktop-small {
             @include grid-column-span(5);
-            @include grid-column-start(14);
+            @include grid-column-start(15);
             margin-bottom: -150px;
         }
         @include breakpoint-desktop-medium {
             @include grid-column-span(4);
-            @include grid-column-start(15);
+            @include grid-column-start(16);
             align-self: end;
         }
         .gallery-text{
@@ -255,10 +260,10 @@ section{
 .overview{
     position: relative;
     background-color: $color-black;
-    .overview-title{
         h1{
+            @include grid-column-start(2);
             @include breakpoint-desktop-small{
-                @include grid-column-start(8);
+                @include grid-column-start(9);
                 @include grid-column-span(5);
             }
             color: $color-brown;
@@ -266,7 +271,7 @@ section{
             line-height: 50px;
             margin-bottom: 60px;
         }
-    }
+  
   
     .shape-top{
         position: absolute;
@@ -293,21 +298,14 @@ section{
     }
 
     .wrapper{
-        max-width: rem(1250px);
-        .overview-items, .overview-title{
-            @include grid-layout(10, 30px);
-            @include breakpoint-desktop-small{
-                @include grid-layout(18);
-            }
-        }
         .overview-btn{
-            @include grid-column-start(1);
+            @include grid-column-start(2);
             @include grid-column-span(8);
             align-self: end;
             @include breakpoint-desktop-small {
                 margin-top: -60px;
                 @include grid-column-span(5);
-                @include grid-column-start(14);
+                @include grid-column-start(15);
             }
         }
     }
@@ -325,22 +323,23 @@ section{
     background: $color-black;
     overflow: hidden;
     @include grid-column-span(10);
+    @include grid-column-start(2);
     justify-content: space-between;
     @include breakpoint-tablet {
-        @include grid-column-span(5);
+        @include grid-column-span(9);
     }
     @include breakpoint-desktop-small {
         @include grid-column-span(5);
         &:nth-child(3n + 1){
-            @include grid-column-start(2);
+            @include grid-column-start(3);
             margin-top: -70px;
         }
         &:nth-child(3n + 2){
             margin-top: 120px;
-            @include grid-column-start(8);
+            @include grid-column-start(9);
         }
         &:nth-child(3n + 3){
-            @include grid-column-start(14);
+            @include grid-column-start(15);
         }
     }
     &:hover{
@@ -434,23 +433,23 @@ section{
         height: 611px;
         @include breakpoint-tablet {
             height: 820px;
-            margin: 10px;
+            margin: 0px 10px;
         }
         .project-item-image{
             position: absolute;
             height: 100%;
+            &::after{
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgb(255,255,255);
+                background: linear-gradient(185deg, rgba(255,255,255,0) 26%, rgba(0,0,0,1) 91%);
+            }
         }
         
-        &::after{
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgb(255,255,255);
-            background: linear-gradient(185deg, rgba(255,255,255,0) 26%, rgba(0,0,0,1) 91%);
-        }
         .shape-top{
             position: absolute;
             top: 0;
@@ -474,9 +473,14 @@ section{
             }
         }
         .wrapper{
-            display: flex;
             height: 100%;
             .project-item-content{
+                @include grid-column-span(10);
+                @include grid-column-start(2);
+                @include breakpoint-desktop-small {
+                    @include grid-column-span(13);
+                    @include grid-column-start(3);
+                }
                 z-index: 1;
                 h1{
                     color: $color-brown;
@@ -500,11 +504,7 @@ section{
 
 .text-image{
     .wrapper{
-        @include grid-layout(10);
-        @include breakpoint-tablet {
-            @include grid-layout(16);
-        }
-        .text{
+        .text-image-text{
             @include grid-column-span(9);
 
             @include breakpoint-tablet {
@@ -513,7 +513,7 @@ section{
             }
             @include breakpoint-desktop-small {
                 @include grid-column-span(8);
-                @include grid-column-start(3);
+                @include grid-column-start(5);
             }
             h1{
                 font-size: 46px;
@@ -527,7 +527,7 @@ section{
                 }
             }
         }
-        .image{
+        .text-image-image{
             @include grid-column-span(9);
             @include grid-column-start(2);
             height: 204px;
@@ -535,8 +535,8 @@ section{
                 width: 310px;
                 margin-top: 130px;
                 @include grid-column-span(4);
-                @include grid-column-start(11);
-                margin-left: 26px;
+                @include grid-column-start(13);
+                margin-left: -26px;
             }
             .shape-top{
                 position: absolute;
@@ -566,22 +566,19 @@ section{
 
 .cta{
     .wrapper{
-        max-width: rem(1250px);
-        @include breakpoint-tablet {
-            @include grid-layout(15);
-            max-width: 1290px;
-        }
         .cta-content{
             align-self: center;
             max-width: 30ch;
             margin-bottom: 50px;
+            @include grid-column-start(2);
+            @include grid-column-span(10);
             @include breakpoint-tablet {
                 @include grid-column-span(5);
-                @include grid-column-start(1);
+                @include grid-column-start(2);
             }
             @include breakpoint-desktop-small {
                 @include grid-column-span(4);
-                @include grid-column-start(3);
+                @include grid-column-start(4);
             }
             h1{
                 font-size: 60px;
@@ -593,14 +590,16 @@ section{
         }
         .big-image{
             height: 324px;
+            @include grid-column-start(2);
+            @include grid-column-span(10);
             @include breakpoint-tablet {
-                @include grid-column-start(6);
+                @include grid-column-start(7);
                 @include grid-column-span(5);
                 height: 526px;
             }
             @include breakpoint-desktop-small {
-                @include grid-column-span(4);
-                @include grid-column-start(7);
+                @include grid-column-span(5);
+                @include grid-column-start(9);
             }   
         }
         .shape-top{
@@ -629,11 +628,9 @@ section{
             display: none;
             @include breakpoint-tablet {
                 display: block;
-            }
-            @include breakpoint-tablet {
                 margin-top: 95px;
                 @include grid-column-span(4);
-                @include grid-column-start(11);
+                @include grid-column-start(14);
             }
             .medium-image{
                 height: 208px;
