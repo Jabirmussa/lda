@@ -506,7 +506,7 @@ section{
     .wrapper{
         .text-image-text{
             @include grid-column-span(9);
-
+            @include grid-column-start(2);
             @include breakpoint-tablet {
                 @include grid-column-span(10);
                 @include grid-column-start(1);
@@ -529,7 +529,7 @@ section{
         }
         .text-image-image{
             @include grid-column-span(9);
-            @include grid-column-start(2);
+            @include grid-column-start(3);
             height: 204px;
             @include breakpoint-tablet {
                 width: 310px;
