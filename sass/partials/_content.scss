@@ -315,6 +315,9 @@ section{
     @include breakpoint-tablet {
         margin-bottom: 0;
         @include grid-column-span(9);
+        &:nth-child(3n + 1){
+            @include grid-column-start(2);
+        }
         &:nth-child(3n + 2){
             @include grid-column-start(11);
         }
