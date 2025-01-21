@@ -55,8 +55,12 @@ em {
         margin: 0 auto;
     }
     h1,h2, h3, h4, h5, h6{
-        @include grid-column-span(11);
-        @include grid-column-start(3);
+        @include grid-column-start(2);
+        @include grid-column-span(10);
+        @include breakpoint-tablet {
+            @include grid-column-span(11);
+            @include grid-column-start(3);
+        }
     }
     p, ul, ol,
     blockquote,
@@ -69,11 +73,13 @@ em {
         &:last-child {
             margin-bottom: 0;
         }
+        @include grid-column-span(10);
+        @include grid-column-start(2);
         @include breakpoint-tablet {
-            @include grid-column-span(12);
+            @include grid-column-span(14);
             @include grid-column-start(3);
         }
-        @include breakpoint-desktop-medium {
+        @include breakpoint-desktop-small {
             @include grid-column-span(9);
         }
     }
@@ -112,8 +118,10 @@ em {
         }
     }
     .button-container{
+        @include grid-column-span(10);
+        @include grid-column-start(2);
         @include breakpoint-tablet {
-            @include grid-column-span(4);
+            @include grid-column-span(6);
             @include grid-column-start(3);
             align-self: end;
         }
@@ -130,11 +138,14 @@ em {
     }
     p:has(img){
         position: relative;
+        @include grid-column-start(2);
+        @include grid-column-span(10);
         @include breakpoint-tablet {
             @include grid-column-start(3);
-            @include grid-column-span(13);
+            @include grid-column-span(17);
         }
         @include breakpoint-desktop-small {
+            @include grid-column-span(13);
             @include grid-column-start(6);
         }
         margin: 0;
