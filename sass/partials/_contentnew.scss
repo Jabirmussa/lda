@@ -32,5 +32,24 @@
                 }
             }
         }
+        .galery-image-medium{
+            @include grid-column-start(2);
+            @include grid-column-span(10);
+            height: 350px;
+
+            @include breakpoint-tablet {
+                @include grid-column-start(11);
+                @include grid-column-span(9);
+                height: 445px;
+            }
+        }
+        .galery-image-small{
+            @include grid-column-start(2);
+            @include grid-column-span(10);
+            height: 266px;
+            @include breakpoint-tablet {
+                @include grid-column-span(4);
+            }
+        }
     }
 }
