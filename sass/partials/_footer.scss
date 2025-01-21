@@ -2,7 +2,7 @@ footer{
     position: relative;
     background: $color-black;
     overflow: hidden;
-    padding: rem(64px) 0;
+    padding: rem(100px) 0;
     @include breakpoint-tablet{
         padding: rem(150px) 0;
     }
@@ -37,7 +37,10 @@ footer{
     }
     .footer-title{
         position: absolute;
-        right: -160px;
+        right: -110px;
+        @include breakpoint-tablet {
+            right: -160px;
+        }
         h1{
             font-size: clamp(3.125rem, 0.3255rem + 10.4167vw, 9.375rem);
         }
