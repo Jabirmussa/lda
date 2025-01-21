@@ -4,7 +4,7 @@ footer{
     overflow: hidden;
     padding: rem(64px) 0;
     @include breakpoint-tablet{
-        padding: rem(100px) 0;
+        padding: rem(150px) 0;
     }
     @include breakpoint-desktop-small{
         padding: rem(200px) 0;
@@ -47,14 +47,17 @@ footer{
         color: $color-brown;
     }
     .wrapper{
-        margin-top: 210px;
+        margin-top: 110px;
         @include breakpoint-tablet {
-            // margin-top: 370px;
+            margin-top: 210px;
+            
         }
-        @include grid-layout(20, rem(30px), rem(30px));
         div{
-            @include grid-column-span(12);
+            @include grid-column-span(10);
             @include breakpoint-tablet{
+                @include grid-column-span(6);
+            }
+            @include breakpoint-desktop-small {
                 @include grid-column-span(4);
             }
             li{
@@ -90,8 +93,14 @@ footer{
         }
 
         .footer-image{
-            @include grid-column-start(4);
             height: 208px;
+            @include grid-column-start(2);
+            @include breakpoint-tablet {
+                @include grid-column-start(3);
+            }
+            @include breakpoint-desktop-small {
+                @include grid-column-start(4);
+            }
             .shape-bottom, .shape-top{
                 path{
                     fill:#000;
@@ -121,10 +130,22 @@ footer{
             }
         }
         .contact-info{
-            @include grid-column-start(10);
+            @include grid-column-start(2);
+            @include breakpoint-tablet {
+                @include grid-column-start(11);
+            }
+            @include breakpoint-desktop-small {
+                @include grid-column-start(10);
+            }
         }
         .link{
-            @include grid-column-start(16);
+            @include grid-column-start(2);
+            @include breakpoint-tablet {
+                @include grid-column-start(3);
+            }
+            @include breakpoint-desktop-small {
+                @include grid-column-start(16);
+            }
         }
     }
 }
