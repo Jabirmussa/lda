@@ -32,9 +32,23 @@ footer{
             width: 262px;
         }
     }
+    .footer-title{
+        position: absolute;
+        right: 0;
+        h1{
+            font-size: clamp(3.125rem, 0.3255rem + 10.4167vw, 9.375rem);
+        }
+    }
 
+    h1,h2, h3, h4, p, a{
+        color: $color-brown;
+    }
     .wrapper{
-        @include grid-layout(12, rem(30px), rem(30px));
+        margin-top: 210px;
+        @include breakpoint-tablet {
+            // margin-top: 370px;
+        }
+        @include grid-layout(20, rem(30px), rem(30px));
         div{
             @include grid-column-span(12);
             @include breakpoint-tablet{
@@ -43,9 +57,6 @@ footer{
             li{
                 padding-left: 0!important;
             }
-        }
-        h2, h3, h4, p, a{
-            color: $color-white;
         }
     }
 }
