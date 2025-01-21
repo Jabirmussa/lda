@@ -93,13 +93,13 @@ section{
     }
 }
 
-.gallery{
+.title-image{
     margin-bottom: 145px;
     @include breakpoint-desktop-small {
         margin-bottom: 245px;
     }
    
-    .galery-title{
+    .title-image-title{
         @include grid-column-span(12);
         @include grid-column-start(2);
         @include breakpoint-desktop-small {
@@ -120,7 +120,7 @@ section{
             }
         }
     }
-    .gallery-image-big{
+    .title-image-big{
         @include grid-column-span(9);
         @include grid-column-start(3);
         margin: 40px 0;
@@ -167,7 +167,7 @@ section{
         }
     }
 
-    .gallery-text-image{
+    .title-image-image{
         @include grid-column-span(9);
         @include grid-column-start(3);
         @include breakpoint-desktop-small {
@@ -180,7 +180,7 @@ section{
             @include grid-column-start(16);
             align-self: end;
         }
-        .gallery-text{
+        .title-image-text{
             max-width: 28ch;
             p{
                 margin-bottom: 13px;
@@ -192,7 +192,7 @@ section{
                 margin-bottom: 65px;
             }
         }
-        .gallery-image-small{
+        .title-image-small{
             height: 193px;
             display: none;
             @include breakpoint-desktop-small{
