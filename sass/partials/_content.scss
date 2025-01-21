@@ -500,7 +500,10 @@ section{
             margin-bottom: 45px;
             @include breakpoint-tablet {
                 margin-bottom: 0;
-                @include grid-column-start(1);
+            }
+            @include breakpoint-desktop-small {
+                @include grid-column-span(8);
+                @include grid-column-start(4);
             }
             @include breakpoint-desktop-small {
                 @include grid-column-span(8);
