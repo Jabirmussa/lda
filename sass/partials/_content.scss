@@ -327,6 +327,9 @@ section{
     justify-content: space-between;
     @include breakpoint-tablet {
         @include grid-column-span(9);
+        &:nth-child(3n + 2){
+            @include grid-column-start(11);
+        }
     }
     @include breakpoint-desktop-small {
         @include grid-column-span(5);
