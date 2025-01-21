@@ -10,8 +10,6 @@ footer{
         padding: rem(200px) 0;
     }
 
- 
-
     .shape-top{
         position: absolute;
         top: 0;
@@ -98,7 +96,9 @@ footer{
         .footer-image{
             height: 208px;
             @include grid-column-start(2);
+            display: none;
             @include breakpoint-tablet {
+                display: block;
                 @include grid-column-start(3);
             }
             @include breakpoint-desktop-small {

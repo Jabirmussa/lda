@@ -493,9 +493,9 @@ section{
     }
 }
 
-.text-image{
+.quote{
     .wrapper{
-        .text-image-text{
+        .quote-title{
             @include grid-column-span(10);
             @include grid-column-start(2);
             margin-bottom: 45px;
@@ -522,7 +522,7 @@ section{
                 }
             }
         }
-        .text-image-image{
+        .quote-image{
             @include grid-column-span(9);
             @include grid-column-start(3);
             height: 204px;
@@ -593,7 +593,7 @@ section{
             @include grid-column-span(10);
             @include breakpoint-tablet {
                 @include grid-column-start(7);
-                @include grid-column-span(5);
+                @include grid-column-span(7);
                 height: 526px;
             }
             @include breakpoint-desktop-small {

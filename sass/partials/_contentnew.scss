@@ -1,0 +1,13 @@
+.galery{
+    .wrapper{
+        .galery-image-big{
+            @include grid-column-start(2);
+            @include grid-column-span(10);
+            height: 350px;
+            @include breakpoint-tablet {
+                height: 730px;
+                @include grid-column-span(8);
+            }
+        }
+    }
+}
