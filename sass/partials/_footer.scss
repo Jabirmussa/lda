@@ -37,7 +37,7 @@ footer{
     }
     .footer-title{
         position: absolute;
-        right: -110px;
+        right: -100px;
         @include breakpoint-tablet {
             right: -160px;
         }

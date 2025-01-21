@@ -503,12 +503,12 @@ section{
                 margin-bottom: 0;
             }
             @include breakpoint-desktop-small {
-                @include grid-column-span(8);
-                @include grid-column-start(4);
+                @include grid-column-span(10);
+                @include grid-column-start(2);
             }
-            @include breakpoint-desktop-small {
-                @include grid-column-span(8);
-                @include grid-column-start(5);
+            @include breakpoint-desktop-medium {
+                @include grid-column-start(4);
+                @include grid-column-span(7);
             }
             h1{
                 font-size: 46px;
@@ -530,8 +530,12 @@ section{
                 width: 310px;
                 margin-top: 130px;
                 @include grid-column-span(4);
-                @include grid-column-start(13);
+                @include grid-column-start(14);
                 margin-left: -26px;
+            }
+            @include breakpoint-desktop-medium {
+                @include grid-column-span(4);
+                @include grid-column-start(12);
             }
             .shape-top{
                 position: absolute;
