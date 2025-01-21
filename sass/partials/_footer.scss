@@ -1,13 +1,16 @@
 footer{
     position: relative;
     background: $color-black;
-    padding: rem(30px) 0;
+    overflow: hidden;
+    padding: rem(64px) 0;
     @include breakpoint-tablet{
-        padding: rem(64px) 0;
+        padding: rem(100px) 0;
     }
     @include breakpoint-desktop-small{
-        padding: rem(120px) 0;
+        padding: rem(200px) 0;
     }
+
+ 
 
     .shape-top{
         position: absolute;
@@ -34,7 +37,7 @@ footer{
     }
     .footer-title{
         position: absolute;
-        right: 0;
+        right: -160px;
         h1{
             font-size: clamp(3.125rem, 0.3255rem + 10.4167vw, 9.375rem);
         }
@@ -52,11 +55,76 @@ footer{
         div{
             @include grid-column-span(12);
             @include breakpoint-tablet{
-                @include grid-column-span(6);
+                @include grid-column-span(4);
             }
             li{
                 padding-left: 0!important;
             }
+        }
+        h2{
+            font-size: rem(40px);
+            margin-bottom: 22px;
+            line-height: 1;
+        }
+        p, a{
+            font-size: rem(20px);
+            text-decoration: none
+        }
+        a{
+            position: relative;
+            &::after{
+                content: '';
+                position: absolute;
+                bottom: -4px;
+                left: 0;
+                width: 0;
+                height: 1px;
+                background: $color-brown;
+                transition: width 0.4s ease-in-out;
+            }
+            &:hover{
+                &::after{
+                    width: 100%;
+                }
+            }
+        }
+
+        .footer-image{
+            @include grid-column-start(4);
+            height: 208px;
+            .shape-bottom, .shape-top{
+                path{
+                    fill:#000;
+                }
+            }
+            .shape-top{
+                position: absolute;
+                top: 0;
+                left: 15px;
+                z-index: 2;
+                width: 96px;
+                @include breakpoint-tablet {
+                    left: 20px;
+                    width: 118px;
+                }
+            }
+            .shape-bottom{
+                position: absolute;
+                bottom: -1px;
+                right: 15px;
+                z-index: 2;
+                width: 96px;
+                @include breakpoint-tablet {
+                    right: 20px;
+                    width: 118px;
+                }
+            }
+        }
+        .contact-info{
+            @include grid-column-start(10);
+        }
+        .link{
+            @include grid-column-start(16);
         }
     }
 }
