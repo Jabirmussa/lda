@@ -424,7 +424,7 @@ section{
         height: 611px;
         @include breakpoint-tablet {
             height: 820px;
-            margin: 0px 10px;
+            margin: 10px;
         }
         .project-item-image{
             position: absolute;
