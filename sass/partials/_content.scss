@@ -46,6 +46,7 @@ section{
     .wrapper{
         z-index: 2;
         height: 100%;
+        width: 100%;
         .hero-content{
             @include grid-column-span(11);
             @include grid-column-start(2);
