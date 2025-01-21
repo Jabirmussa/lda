@@ -97,23 +97,6 @@ section{
     @include breakpoint-desktop-small {
         margin-bottom: 245px;
     }
-    // .gallery-content{
-    //     width: 100%;
-    //     @include breakpoint-tablet {
-    //         margin: 0 auto;
-    //         max-width: rem(850px);
-    //     }
-    //     @include breakpoint-desktop-medium {
-    //         max-width: rem(1250px);
-    //     }
-    //     display: grid;
-    //     @include grid-layout(12);
-    //     gap: 40px 10px;
-    //     @include breakpoint-desktop-small {
-    //         @include grid-layout(18);
-    //         gap: 10px 10px;
-    //     }
-    // }
    
     .galery-title{
         @include grid-column-span(12);
@@ -139,7 +122,9 @@ section{
     .gallery-image-big{
         @include grid-column-span(10);
         @include grid-column-start(3);
+        margin: 40px 0;
         @include breakpoint-tablet {
+            margin: 0;
             @include grid-column-span(17);
         }
         @include breakpoint-desktop-small {
@@ -325,6 +310,7 @@ section{
     @include grid-column-span(10);
     @include grid-column-start(2);
     justify-content: space-between;
+    margin-bottom: 22px;
     @include breakpoint-tablet {
         @include grid-column-span(9);
         &:nth-child(3n + 2){
@@ -508,10 +494,11 @@ section{
 .text-image{
     .wrapper{
         .text-image-text{
-            @include grid-column-span(9);
+            @include grid-column-span(10);
             @include grid-column-start(2);
+            margin-bottom: 45px;
             @include breakpoint-tablet {
-                @include grid-column-span(10);
+                margin-bottom: 0;
                 @include grid-column-start(1);
             }
             @include breakpoint-desktop-small {
