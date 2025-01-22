@@ -86,6 +86,36 @@
                     font-size: 29px;
                 }
             }
+            ul > li{
+                position: relative;
+                font-size: 16px;
+                padding-left: 46px;
+                @include breakpoint-tablet {
+                    font-size: 20px;
+                }
+                &::before{
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform:rotate(45deg);
+                    width: 8px;
+                    height: 1px;
+                    border-radius: 20px;
+                    background-color: #000;
+                }
+                &::after{
+                    content: '';
+                    position: absolute;
+                    left: 4px;
+                    top: 40%;
+                    transform: rotate(-45deg);
+                    width: 18px;
+                    height: 1px;
+                    border-radius: 20px;
+                    background-color: #000;
+                }
+            }
         }
         .galery-title{
             display: grid;
