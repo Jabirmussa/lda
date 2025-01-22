@@ -126,6 +126,7 @@
                 margin-bottom: 0;
             }
             @include breakpoint-desktop-small {
+                margin-bottom: -150px;
                 @include grid-column-span(5);
                 
             }
