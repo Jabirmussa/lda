@@ -1,6 +1,9 @@
 .galery{
     .wrapper{
-        row-gap: 80px;
+        row-gap: 40px;
+        @include breakpoint-tablet {
+            row-gap: 80px;
+        }
         .galery-image-big{
             position: relative;
             @include grid-column-start(2);
