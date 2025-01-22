@@ -22,11 +22,18 @@
            
         }
         .search-icon{
+            cursor: pointer;
             position: absolute;
-            bottom: 10px;
-            right: 60px;
-            width: 30px;
+            bottom: 0px;
+            right: 30px;
+            width: 25px;
             z-index: 2;
+            @include breakpoint-tablet {
+                bottom: 10px;
+                right: 60px;
+                width: 30px;
+                
+            }
         }
         .shape-top{
             position: absolute;
@@ -59,7 +66,7 @@
                 @include grid-column-start(11);
                 @include grid-column-span(9);
                 height: 445px;
-                &:nth-child(3n + 1){
+                &:nth-child(1){
                     @include grid-row-start(1);
                 }
                 &:nth-child(2){
