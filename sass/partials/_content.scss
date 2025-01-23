@@ -497,6 +497,10 @@ section{
 }
 
 .quote{
+    position: relative;
+    .shape-top, .shape-bottom{
+        display: none;
+    }
     .wrapper{
         .quote-title{
             @include grid-column-span(10);
@@ -541,6 +545,7 @@ section{
                 @include grid-column-start(12);
             }
             .shape-top{
+                display: block;
                 position: absolute;
                 top: 0;
                 left: 15px;
@@ -552,6 +557,7 @@ section{
                 }
             }
             .shape-bottom{
+                display: block;
                 position: absolute;
                 bottom: -1px;
                 right: 15px;
@@ -560,6 +566,19 @@ section{
                 @include breakpoint-tablet {
                     right: 20px;
                     width: 118px;
+                }
+            }
+        }
+    }
+    &.black-background{
+        background-color: $color-black;
+        h2{
+            color: $color-brown;
+        }
+        .quote-image{
+            .shape-top, .shape-bottom{
+                path{
+                    fill: #000;
                 }
             }
         }
