@@ -246,7 +246,7 @@ section{
 .overview{
     position: relative;
     background-color: $color-black;
-        h1{
+        h2{
             @include grid-column-start(2);
             @include breakpoint-desktop-small{
                 @include grid-column-start(9);
