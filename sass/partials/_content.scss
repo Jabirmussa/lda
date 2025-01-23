@@ -631,8 +631,11 @@ section{
             @include breakpoint-tablet {
                 display: block;
                 margin-top: 95px;
-                @include grid-column-span(4);
+                @include grid-column-span(6);
                 @include grid-column-start(14);
+            }
+            @include breakpoint-desktop-medium {
+                @include grid-column-span(4);
             }
             .medium-image{
                 height: 208px;
