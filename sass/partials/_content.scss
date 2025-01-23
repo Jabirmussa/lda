@@ -476,7 +476,7 @@ section{
                     @include grid-column-start(3);
                 }
                 z-index: 1;
-                h1{
+                h2{
                     color: $color-brown;
                     font-size: 45px;
                     line-height: 1;
@@ -513,7 +513,7 @@ section{
                 @include grid-column-start(4);
                 @include grid-column-span(7);
             }
-            h1{
+            h2{
                 font-size: 46px;
                 line-height: 1;
                 @include breakpoint-tablet {
@@ -582,7 +582,7 @@ section{
                 @include grid-column-span(4);
                 @include grid-column-start(4);
             }
-            h1{
+            h2{
                 font-size: 60px;
                 line-height: 60px;
                 @include breakpoint-tablet {

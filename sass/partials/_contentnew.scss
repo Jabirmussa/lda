@@ -18,7 +18,7 @@
             @include breakpoint-tablet {
                 height: 530px;
                 @include grid-column-span(8);
-                &:nth-child(2n + 2){
+                & ~ .galery-image-big{
                     @include grid-row-start(4);
                     @include grid-column-start(11);
                 }
