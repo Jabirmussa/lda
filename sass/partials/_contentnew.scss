@@ -11,7 +11,7 @@
             @include grid-row-start(1);
             @include grid-row-span(2);
             height: 350px;
-            &:nth-child(2n + 2){
+            & ~ .galery-image-big{
                 @include grid-row-start(9);
                 @include grid-column-start(2);
             }
@@ -74,7 +74,7 @@
                 @include grid-column-start(11);
                 @include grid-column-span(9);
                 @include grid-row-start(1);
-                
+
                 & ~ .galery-image-medium {
                     @include grid-column-start(1);
                     @include grid-row-start(3);
