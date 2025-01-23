@@ -164,3 +164,40 @@
         }
     }
 }
+
+.contact{
+    .wrapper{
+        row-gap: 40px;
+        .contact-text{
+            @include grid-column-start(2);
+            @include grid-column-span(10);
+            @include breakpoint-tablet {
+                @include grid-column-span(15);
+            }
+            @include breakpoint-desktop-small {
+                @include grid-column-start(3);
+                @include grid-column-span(9);
+            }
+            
+        }
+        .contact-info{
+            @include grid-column-start(2);
+            @include grid-column-span(6);
+        
+            @include breakpoint-desktop-small {
+                @include grid-column-span(4);
+                @include grid-column-start(15);
+            }
+            h3{
+                font-size: 26px;
+                margin-bottom: 26px;
+                line-height: 1;
+                @include breakpoint-tablet {
+                    font-size: 36px;
+                    margin-bottom: 46px;
+                    line-height: 60px;
+                }
+            }
+        }
+    }
+}

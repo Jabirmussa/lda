@@ -65,13 +65,20 @@
 }
 
 .header-menu-large {
-    display: none;
+    // display: none;
 
     @include breakpoint-desktop-small {
         display: flex;
         align-items: flex-start;
         padding-top: rem(40px);
-
+        justify-content: space-between;
+        ul{
+            display: flex;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
         li + li {
             margin-left: 2rem;
         }
@@ -109,7 +116,7 @@
                 }
             }
             a{
-                font-family: $font-family-title;
+                font-family: $font-family-default;
                 font-size: rem(18px);
                 text-decoration: none;
                 color: $color-white;
