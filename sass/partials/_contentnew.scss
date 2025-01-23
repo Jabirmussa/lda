@@ -16,12 +16,15 @@
                 @include grid-column-start(2);
             }
             @include breakpoint-tablet {
-                height: 730px;
+                height: 530px;
                 @include grid-column-span(8);
                 &:nth-child(2n + 2){
                     @include grid-row-start(4);
                     @include grid-column-start(11);
                 }
+            }
+            @include breakpoint-desktop-small {
+                height: 730px;
             }
            
         }
@@ -68,20 +71,22 @@
             
             @include grid-row-span(1);
             @include breakpoint-tablet {
-                height: 445px;
                 @include grid-column-start(11);
                 @include grid-column-span(9);
-                &:nth-child(3n + 1){
-                    @include grid-row-start(1);
-                }
+                @include grid-row-start(1);
                 
-                &:nth-child(3n + 2){
+                & ~ .galery-image-medium {
                     @include grid-column-start(1);
                     @include grid-row-start(3);
                 }
-                // &:nth-child(3n + 3){
-                //     @include grid-row-start(3);
-                // }
+                
+                & ~ .galery-image-medium ~ .galery-image-medium{
+                    @include grid-column-start(11);
+                    @include grid-row-start(3);
+                }
+            }
+            @include breakpoint-desktop-small {
+                height: 445px;
             }
         }
         .galery-text{
