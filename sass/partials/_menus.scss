@@ -65,7 +65,7 @@
 }
 
 .header-menu-large {
-    // display: none;
+    display: none;
 
     @include breakpoint-desktop-small {
         display: flex;
@@ -91,10 +91,11 @@
                     content: '';
                     position: absolute;
                     left: 50%;
-                    top: rem(-50px);
-                    width: rem(1px);
+                    top: rem(-58px);
+                    width: rem(50px);
                     height: rem(30px);
-                    background: $color-white;
+                    transform: rotate(330deg);
+                    background: $color-brown;
                 }
                 a{
                     pointer-events: none;

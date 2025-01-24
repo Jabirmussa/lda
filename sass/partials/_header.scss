@@ -1,5 +1,5 @@
 header{
-    transition: all 0.3s ease-in-out;
+    transition: all 0.2s ease-in-out;
     position: fixed;
     top: 0;
     left: 0;
@@ -7,6 +7,7 @@ header{
     z-index: 100;
     padding: rem(10px) 30px;
     height: rem(60px);
+
 
     @include breakpoint-desktop-small{
         height: auto;
@@ -22,8 +23,22 @@ header{
     
     
     &.fixed{
-        background: $color-black;
+        background: $color-brown;
         padding-bottom: rem(10px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        ul > li{
+            &.current-menu-item{
+                &::before{
+                    background: #000;
+                }
+            }
+            a{
+                 color: #000;
+             }
+        }
+        .shape-top{
+            // filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+        }
     }
 
     .shape-top{
