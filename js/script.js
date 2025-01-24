@@ -12,34 +12,9 @@ function fixHeaderOnScroll() {
 window.addEventListener('scroll', fixHeaderOnScroll);
 fixHeaderOnScroll();
 
-// Header menu
-const headerBurger = document.querySelector('.header-burger');
-let scrollPosition = 0;
 
-headerBurger.addEventListener('click', () => {
-    if (document.body.classList.contains('menu-is-open')) {
-        document.body.classList.remove('menu-is-open');
-        window.scrollTo({top: scrollPosition, behavior: 'auto'});
-    } else {
-        scrollPosition = window.scrollY;
-        document.body.classList.add('menu-is-open');
-    }
+const lightbox = GLightbox({
+    selector: '.galery .wrapper a',
+    touchNavigation: true,
+    loop: true
 });
-  
-window.addEventListener('resize', () => {
-    document.body.classList.remove('menu-is-open');
-});
-
-// Tiny slider
-const sliderWrap = document.querySelector('.slider-wrap');
-
-if(sliderWrap){
-    var slider = tns({
-        container: '.slider-wrap',
-        items: 1,
-        mouseDrag: true,
-        controls: true,
-        nav: false,
-        autoHeight: true
-    });
-}
