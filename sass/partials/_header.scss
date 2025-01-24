@@ -19,12 +19,22 @@ header{
             justify-content: end;
         }
     }
-    
-    
+    &::before{
+        transition: all 0.4s ease-in-out;
+        content: '';
+        position: absolute;
+        top: -37vw;
+        left: -20px;
+        background-color: #fbf8ee;
+        width: 200%;
+        height: 200px;
+        transform: rotate(-21deg);
+        transform-origin: 50% 50%;
+        // transition-delay: 0.3s;
+    }
+
     &.fixed{
-        background: $color-brown;
         padding-bottom: rem(10px);
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         ul > li{
             &.current-menu-item{
                 &::before{
@@ -39,27 +49,19 @@ header{
                 }
              }
         }
-        .shape-top{
-            // filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+        &::before{
+            
+            top: -5vw;
+            left: -100%;
+            transform: rotate(0deg);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
     }
 
-    .shape-top{
-        position: absolute;
-        // z-index: 1;
-        top: 10px;
-        left: 25px;
-        width: 30vw;
-        min-width: 282px;
-        @include breakpoint-tablet {
-            max-width: 414px;
-            left: 40px;
-        }
-    }
 }
 
 .header-logo{
-    transition: all 0.3s ease-in-out;
+    transition: all 0.4s ease-in-out;
     position: relative;
     top: 0;
     display: block;
@@ -71,11 +73,20 @@ header{
     }
     @include breakpoint-desktop-medium {
         left: 110px;
-        width: rem(100px);
+        width: rem(80px);
     }
     .fixed & {
+        transition-delay: 0.6s;
         @include breakpoint-desktop-medium{
-            width: rem(50px);
+            width: rem(100px);
+        }
+        svg{
+            #Group_34{
+                #letters{
+                    display: none;
+                }
+            }
         }
     }
+  
 }
