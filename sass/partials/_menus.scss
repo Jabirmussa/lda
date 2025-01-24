@@ -70,7 +70,6 @@
     @include breakpoint-desktop-small {
         display: flex;
         align-items: flex-start;
-        padding-top: rem(40px);
         justify-content: space-between;
         ul{
             display: flex;

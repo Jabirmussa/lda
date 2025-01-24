@@ -5,12 +5,11 @@ header{
     left: 0;
     width: 100%;
     z-index: 100;
-    padding: rem(10px) 30px;
+    padding: rem(40px) 43px;
     height: rem(60px);
 
-
     @include breakpoint-desktop-small{
-        height: auto;
+        height: rem(110px);
     }
     
     .wrapper{
@@ -30,6 +29,7 @@ header{
             &.current-menu-item{
                 &::before{
                     background: #000;
+                    //  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
                 }
             }
             a{
@@ -50,8 +50,9 @@ header{
         top: 10px;
         left: 25px;
         width: 30vw;
-        max-width: 414px;
+        min-width: 282px;
         @include breakpoint-tablet {
+            max-width: 414px;
             left: 40px;
         }
     }
@@ -61,13 +62,20 @@ header{
     transition: all 0.3s ease-in-out;
     position: relative;
     top: 0;
-    left: 120px;
     display: block;
-    width: rem(80px);
+    width: rem(50px);
+    left: 50px;
+    
     @include breakpoint-desktop-small{
+        left: 80px;
+    }
+    @include breakpoint-desktop-medium {
+        left: 110px;
         width: rem(100px);
     }
     .fixed & {
-        width: rem(80px);
+        @include breakpoint-desktop-medium{
+            width: rem(50px);
+        }
     }
 }
