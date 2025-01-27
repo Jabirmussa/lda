@@ -13,7 +13,6 @@ window.addEventListener('scroll', fixHeaderOnScroll);
 fixHeaderOnScroll();
 
 if(document.querySelector('.galery')) {
-   
     const lightbox = GLightbox({
         selector: '.galery .wrapper a',
         touchNavigation: true,
@@ -22,7 +21,6 @@ if(document.querySelector('.galery')) {
 }
 
 //gsap
-
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 let smoother = ScrollSmoother.create({
@@ -59,7 +57,6 @@ const tl2 = gsap.timeline({
 tl3 = gsap.timeline({
     scrollTrigger: {
       trigger: '.overview',
-    //   start: 'top top',
       end: '20% top',
       scrub: 1.2,
     markers: true
