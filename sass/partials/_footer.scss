@@ -35,10 +35,10 @@ footer{
     }
     .footer-title{
         position: absolute;
-        right: -100px;
-        @include breakpoint-tablet {
-            right: -160px;
-        }
+        right: -80%;
+        // @include breakpoint-tablet {
+        //     right: -160px;
+        // }
         h2{
             font-size: clamp(3.125rem, 0.3255rem + 10.4167vw, 9.375rem);
         }
