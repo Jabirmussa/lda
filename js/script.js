@@ -59,13 +59,12 @@ tl3 = gsap.timeline({
       trigger: '.overview',
       end: '20% top',
       scrub: 1.2,
-    markers: true
     },
     duration: 0.3
     
 })
 tl3.to(".overview-item-image", { 
     clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)", 
-    scale:1.1, 
+    height: "100%",
     ease: "power1.out"
  });
