@@ -41,18 +41,22 @@ const tl = gsap.timeline({
   .to('.footer-title', {
     right: '31%'
   })
-const tl2 = gsap.timeline({
-    scrollTrigger: {
-      trigger: '.projects',
-      start: 'top bottom',
-      end: '20% top',
-      scrub: true
-    },
-})
 
-.to('.project-item', {
-    scale: 1
-})
+const projects = document.querySelectorAll('.projects .project-item');
+projects.forEach((project) => {
+    const tl2 = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.projects',
+          start: 'top bottom',
+          end: '20% top',
+          scrub: true
+        },
+    })
+    
+    tl2.to(project, {
+        scale: 1
+    })
+});
 
 tl3 = gsap.timeline({
     scrollTrigger: {
@@ -61,7 +65,6 @@ tl3 = gsap.timeline({
       scrub: 1.2,
     },
     duration: 0.3
-    
 })
 tl3.to(".overview-item-image", { 
     clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)", 
