@@ -423,6 +423,11 @@ section{
 }
 
 .projects{
+    .ajax-container{
+        display: flex;
+        flex-wrap: nowrap;
+        width:500vw;
+    }
     .project-item{
         overflow: hidden;
         position: relative;
