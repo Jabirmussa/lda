@@ -424,9 +424,9 @@ section{
 
 .projects{
     .ajax-container{
-        display: flex;
+        // display: flex;
         flex-wrap: nowrap;
-        width:500vw;
+        // width:500vw;
     }
     .project-item{
         overflow: hidden;
@@ -437,7 +437,8 @@ section{
         @include breakpoint-tablet {
             height: 820px;
             margin: 10px;
-            scale: 0.5;
+            transform: scaleX(0.5);
+            // scale: 0.5;
         }
         .project-item-image{
             position: absolute;

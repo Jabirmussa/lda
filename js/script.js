@@ -54,7 +54,7 @@ projects.forEach((project) => {
     })
     
     tl2.to(project, {
-        scale: 1
+        scaleX: 1
     })
 });
 
@@ -73,15 +73,15 @@ tl3.to(".overview-item-image", {
  });
 
 
- let horizontalSections = gsap.utils.toArray(".ajax-container .project-item");
-gsap.to(horizontalSections, {
-  xPercent: -100 * (horizontalSections.length - 1),
-  ease: "none",
-  scrollTrigger: {
-    trigger: '.horizontal',
-    pin: true,
-    scrub: 1,
-    end: "+=3500",
-    // markers: true,
-  }
-});
+//  let horizontalSections = gsap.utils.toArray(".ajax-container .project-item");
+// gsap.to(horizontalSections, {
+//   xPercent: -100 * (horizontalSections.length - 1),
+//   ease: "none",
+//   scrollTrigger: {
+//     trigger: '.horizontal',
+//     pin: true,
+//     scrub: 1,
+//     end: "+=3500",
+//     // markers: true,
+//   }
+// });
